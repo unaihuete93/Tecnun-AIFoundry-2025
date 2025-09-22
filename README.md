@@ -239,5 +239,31 @@ You will see the model is able to provide the answer in the desired JSON format,
 #### TASK 4 - EXERCISE 4
 Try you own example question that reflects how the **few shot examples** are used by the model. Upload the results as `TASK4-EXERCISE4-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
    
+#### TASK 4 - 5 Parameters
+
+Parameters are settings that can be adjusted to control the behavior of the GPT model. They allow you to modify the model's responses and tailor them to your specific use case.
+
+In the Chat Playground, you can see the parameters section at the left of the chat interface, under "Parameters". Some of the most important parameters are:
+- **Temperature**: This parameter controls the randomness of the model's responses. A higher temperature value (e.g., 0.8) will result in more diverse and creative responses, while a lower temperature value (e.g., 0.2) will result in more focused and deterministic responses. 
+- **Max Tokens**: This parameter controls the maximum length of the model's responses. It limits the number of tokens (words or subwords) that the model can generate in its response.
+- And many more (less frequently used ones): Top P, Frequency Penalty, Presence Penalty, etc.
+
+Try the following example for Max Completion Tokens:
+1. System Message: "You are a helpful assistant AI Assistant". (really generic to focus on the use of examples)
+2. Max Completion Tokens: 1000
+3. Request for the model: "Explain me in detail what Tecnun is"
+
+![Max Tokens example](images/MaxTokens1000.png)
+
+You will see the model is able to provide a detailed response, as it has enough tokens to generate a long answer.
+
+Now change the Max Completion Tokens to 100 and try the same example again:
+
+![Max Tokens example 2](images/MaxToken100.png)
+
+You will see the model is not able to provide a detailed response, as it does not have enough tokens to generate a long answer.
+
+#### TASK 4 - EXERCISE 5
+Try you own example question that reflects how the **parameters** are used by the model. Upload the results as `TASK4-EXERCISE5-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
 
 
