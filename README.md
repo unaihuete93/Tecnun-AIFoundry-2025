@@ -412,6 +412,9 @@ Show a Playground query that gives an answer citating the custom data. Similar t
 
 Upload the results as `TASK5-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
 
+### Task 6 - Responsible AI(Optional)
+
+### Task 7 - Python App (Optional)
 
 
 
