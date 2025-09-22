@@ -301,5 +301,5 @@ In this task, you will explore the Azure Search resource that has been set up fo
 
 Lets imagine we are a travel agency. This travel agency for many years has been creating travel guides for different cities around the world. The travel guides are in PDF format and contain information about the city, including places to visit, restaurants, hotels, etc.
 
-Something like the following PDF: [London PDF](London Brochure.pdf)
+You can use the sample travel brochure provided in the workspace: [London Brochure.pdf](./London%20Brochure.pdf)
 
