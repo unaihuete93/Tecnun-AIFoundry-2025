@@ -11,9 +11,8 @@
     - Few Shot Examples
     - Conversation History
 
-## EXERCISES TO BE UPLOADED
+### EXERCISES TO BE UPLOADED
 There will be sections in the document were the student will have to upload a file to ADI to show they have completed the exercise.
-
 
 ### TASK 1 - Setting up Azure Foundry
 
@@ -266,4 +265,41 @@ You will see the model is not able to provide a detailed response, as it does no
 #### TASK 4 - EXERCISE 5
 Try you own example question that reflects how the **parameters** are used by the model. Upload the results as `TASK4-EXERCISE5-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
 
+
+### TASK 5 - RAG (Retrieval Augmented Generation) with Azure Foundry
+
+What is RAG?
+
+RAG (Retrieval Augmented Generation) is a technique that combines the power of large language models (LLMs) with **external knowledge sources** to improve the quality and relevance of generated content. By integrating retrieval mechanisms into the generation process, RAG enables LLMs to access and utilize specific information from external databases, documents, or other resources, resulting in more accurate and contextually appropriate outputs.
+
+Basically when custom data is needed to answer a question, RAG is used to retrieve the relevant information from an external source and provide it to the LLM to generate a more accurate response.
+
+![alt text](images/rag.png)
+
+These are steps followed by a tipical RAG architecture:
+1. **User Input/Question**: The user submits a query or question to the system.
+2. **Retrieval**: The system uses a retrieval mechanism (like a search engine or a vector database) to find relevant documents or information from an external knowledge source based on the user's input.
+    >NOTE: For our lab we will use an **Azure Search** resource as the external knowledge source.
+3. **Augmentation**: The retrieved documents or information are then combined with the user's input. Basically we send 2 inputs to the Gen AI model
+    3.1 The user input/question
+    3.2 The relevant information retrieved from the external source, the **relevant search results**.
+
+On this labs we are going to Analyze each component of the RAG architecture and test it in practice using Azure Foundry.
+
+### Task 5 - 1 - Components Involved in RAG
+
+The main components involved in a RAG architecture are:
+1. **Large Language Model (LLM) or SLM (Small Language Model)**: This is the core component of the RAG architecture. It is responsible for generating text based on the input it receives. In our case, we will use the `gpt-4.1-mini (Azure OpenAI)` model deployed in the Azure Foundry. **Already explained in previous tasks**.
+
+2. **Data Index / Vector Database**: This component is responsible for retrieving relevant documents or information from an external knowledge source based on the user's input. In our case, we will use an **Azure Search** resource as the Data Index / Vector Database keeping our custom data
+
+3. **Embedding Model**: This component is responsible for converting text into vector representations (embeddings) that can be used for similarity search. In our case, we will use the `text-embedding-ada-002` model from Azure OpenAI to generate embeddings/vectors for our custom data.
+
+### Task 5 - 2 - Azure Search Resource
+
+In this task, you will explore the Azure Search resource that has been set up for you. The Azure Search resource is used as the Data Index / Vector Database in our RAG architecture.
+
+Lets imagine we are a travel agency. This travel agency for many years has been creating travel guides for different cities around the world. The travel guides are in PDF format and contain information about the city, including places to visit, restaurants, hotels, etc.
+
+Something like the following PDF: [London PDF](London Brochure.pdf)
 
