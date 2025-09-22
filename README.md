@@ -303,3 +303,115 @@ Lets imagine we are a travel agency. This travel agency for many years has been 
 
 You can use the sample travel brochure provided in the workspace: [London Brochure.pdf](./London%20Brochure.pdf)
 
+Our PDF are considered **our RAW data**. In order to make this data searchable, we need to extract the text from the PDF and create an index in Azure Search. An index is a collection of documents that can be searched. Each document contains fields that can be searched and filtered.
+
+Each document in the index will represent a section of the PDF. The fields in the document will represent the different attributes of the section, like:
+- Title
+- Content
+- And many more fields that could be created for filtering/ordering purposes.
+
+Go to the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Sept`, you will see a resource called `searchtecnun`. This is the Azure Search resource that has been set up for you.
+
+![search resource](./images/search-resource.png)
+
+Traditionally, searching engines have relied on **keyword-based search**, which can be limited in its ability to understand the context and meaning of the text. If a client was looking for **"Barcelona"**, a keyword-based search engine would only return documents with fields contain the exact word "Barcelona". It would not return documents that contain synonyms or related terms, like "Catalonia" or "Sagrada Familia".
+
+**Vector Search** is a more advanced technique that uses machine learning to understand the context and meaning of the text. It **converts the text into vector** representations (embeddings) that can be used for similarity search (cosine similarity, similarity between vectors). This allows the search engine to return documents that are **similar in meaning, even if they do not contain the exact keywords**.
+
+For the exercise we have taken those RAW PDF travel agency brochures and created an index in the Azure Search resource. The 4 original brochures have been stored in a storage account , processed and indexed. The index is called `rag-1758550374815`. You can see the index by clicking on the **Indexes** option in the left column in the Azure Portal of the Azure Search resource.
+
+Open the index, you will see the **fields** that have been created for the index. The most important fields are:
+- **chunk**: This field contains the text content of the section. 
+- **title**: This field contains the title of the section.
+- **text_vector**: This field contains the vector representation (embedding) of the text content. **This field is used for vector search**.
+
+Lets try keyword-based search directly from the Portal. Click on the **Search explorer** option in the left column. This is where you can test the search capabilities of the Azure Search resource. Look for "London".
+
+![search-portal](./images/search-portal.png)
+
+We can see the search return the London PDF brochure as the top result, as it contains the keyword "London". 
+
+Lets understand why RAG is adding value here: is not only about finding information using vector search/comparison, is also about using a LLM to generate a more human-like response based on the information retrieved.
+
+### Task 5 - 3 - Embedding Model
+
+In this task, you will explore the embedding model that has been set up for you. The embedding model is used to convert text into vector representations (embeddings) that can be used for similarity search.
+
+Azure search has been configured to use the `text-embedding-ada-002` model from Azure OpenAI to generate embeddings/vectors for our custom data. Our questions will also be converted to vectors using the same embedding model, so we can compare the vectors and find the most relevant documents.
+
+### Task 5 - 4 Test without RAG
+
+Go to the Azure Foundry portal (https://ai.azure.com) and open the Chat Playground for the `gpt-4.1-mini (Azure OpenAI)` model deployed in the Azure Foundry.
+
+With the default configuration of the model (no RAG components added), try to ask a question related to the travel brochures, for example:
+"Tell me about the best months to visit London"
+
+![no rag](images/no-rag.png)
+
+You will see the model only provide a generic answer based on its training data.
+
+### Task 5 - 5 - Putting it all together - RAG
+
+Lets try all components together. We will use the Chat Playground for the `gpt-4.1-mini (Azure OpenAI)` model deployed in the Azure Foundry to make calls to the model. Go  to the AI Foundry portal (https://ai.azure.com) and open the Chat Playground for the `gpt-4.1-mini (Azure OpenAI)` model.
+
+![Playground](images/Playground-Start.png)
+
+Click on **Add your data source**. This is where you can configure the RAG components to use your custom data. The following information has to be selected to use the preconfigured Azure AI Search Index:
+
+- Select Data Source: `Azure AI Search`
+- Subscription: `Suscripción de Azure 1`
+- Search Service: `searchtecnun`
+- Index: `rag-1758550374815`
+- SELECT > Add Vector Search...
+- Embedding Model: `text-embedding-ada-002`
+
+![add data](images/add-data.png)
+
+Click on **Next**. Now select the following options:
+- Search Type: `Hybrid (Vector + keyword)`
+
+Click on **Next**. Choose:
+- Azure resource authentication type : `API Key`
+
+Click on **Next**. Click on **Save and close**. 
+
+Now is the moment to try RAG. Ask the model the same question as before:
+"Tell me about the best months to visit London"
+
+![rag-example](images/rag-query.png)
+
+You can see the model is able to provide a  relevant answer **based on the custom data we have provided from AI Search**. 
+
+The main difference between RAG and no RAG is the next: a search solution without RAG would have given you the full unmodified text field (the full PDF section) as the answer (green in picture). With RAG, the LLM is able to generate a more human-like response based on the information retrieved, **giving you a focused answer** (information in the red section, reworded by model). 
+
+![rag-example-2](images/pdf-focus.png)
+
+Apart from the answer, RAG solutions can also be customized to **only return answers contained in the custom data** (no generic answers based on training data).
+
+Try the following on the Playground: 
+- Make sure the option "Limit responses to your data content" is checked.
+- Questions: "Can you tell me something about Tecnun?"
+
+
+![rag-example-3](images/no-tecnun.png)
+
+You can see the model is not able to provide a relevant answer, as there is no information about Tecnun in the custom data. The solution is configured to only provide answers based on the custom data, so it does not provide a generic answer based on its training data.
+
+Unchecking the option "Limit responses to your data content" will allow the model to provide a generic answer based on its training data.
+
+#### TASK 5 - EXERCISE 1
+Try you own example question that reflects how RAG is used to provide relevant answers based on custom data. 
+
+Take a look at the provided PDF brocures that have been indexed in Azure Search for ideas. You can see the PDFs going to the Azure Portal, navigating to the resource group `AzureFoundry-Grado-Sept`, opening the storage account `stgradosept`, opening `Containers` on the left column and `destination` container.  Right click for downloading the files from the `rag-pdfs` container.
+
+![storage](images/storage.png)
+
+Show a Playground query that gives an answer citating the custom data. Similar to:
+
+![rag-example-2](images/rag-query.png)
+
+Upload the results as `TASK5-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
+
+
+
+
