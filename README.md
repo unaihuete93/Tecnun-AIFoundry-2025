@@ -3,13 +3,18 @@
 # Introduction to Azure Foundry
 
 ## Scenarios Covered
-- Overview of Azure Foundry
-- Models and Capabilities
-- Calling Models from Azure Foundry and using different techniques
-    - System Message
-    - Parameters
-    - Few Shot Examples
+- TASK 1 - Setting up Azure Foundry
+- TASK 2 - Exploring the Model Catalog
+- TASK 3 - Model Deployment
+- TASK 4 - Understanding GPT models using Playground
+    - Training Data
     - Conversation History
+    - System Message
+    - Few Shot Examples
+    - Parameters
+- TASK 5 - RAG (Retrieval Augmented Generation) with Azure Foundry
+
+
 
 ### EXERCISES TO BE UPLOADED
 There will be sections in the document were the student will have to upload a file to ADI to show they have completed the exercise.
