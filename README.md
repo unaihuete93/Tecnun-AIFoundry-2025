@@ -523,5 +523,9 @@ The app will respond to the message "I am going to Paris, what should I see?" us
 
 ### TASK 7 - EXERCISE 1
 
-Try you own example question that reflects how to call the model from a Python application. Upload the results as `TASK7-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
+Try you **own example question** that reflects how to call the model from a Python application. Upload the results as `TASK7-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
+
+
+
+
 
