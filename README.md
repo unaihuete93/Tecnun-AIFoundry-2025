@@ -419,7 +419,7 @@ Show a Playground query that gives an answer citating the custom data. Similar t
 
 Upload the results as `TASK5-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
 
-### Task 6 - Responsible AI(Optional)
+### Task 6 - Responsible AI
 
 Microsoft has a strong commitment to Responsible AI. Our responsible AI principles include:
 
@@ -467,7 +467,7 @@ All of those examples are using the default content filter provided by Microsoft
 ### Task 6 - EXERCISE 1
 Try you own example question that reflects how the content filter is used by the model, for a **Hate** scenario. It should show the content filter blocking a hateful response. Upload the results as `TASK6-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
 
-### Task 7 - Python App (Optional)
+### Task 7 - Python App
 
 In this task, you will explore a sample Python application that uses the Azure Foundry to make calls to the `gpt-4.1-mini (Azure OpenAI)` model deployed in the Azure Foundry.
 
