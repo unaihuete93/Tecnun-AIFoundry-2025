@@ -13,6 +13,8 @@
     - Few Shot Examples
     - Parameters
 - TASK 5 - RAG (Retrieval Augmented Generation) with Azure Foundry
+- TASK 6 - Responsible AI 
+- TASK 7 - Python App 
 
 
 
