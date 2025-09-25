@@ -315,7 +315,7 @@ Each document in the index will represent a section of the PDF. The fields in th
 - Content
 - And many more fields that could be created for filtering/ordering purposes.
 
-Go to the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Sept`, you will see a resource called `searchtecnungrado`. This is the Azure Search resource that has been set up for you.
+Go to the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Sept`, you will see a resource called `searchtecnununav`. This is the Azure Search resource that has been set up for you.
 
 ![search resource](./images/search-resource.png)
 
@@ -365,7 +365,7 @@ Click on **Add your data source**. This is where you can configure the RAG compo
 
 - Select Data Source: `Azure AI Search`
 - Subscription: `Suscripción de Azure 1`
-- Search Service: `searchtecnungrado`
+- Search Service: `searchtecnununav`
 - Index: `rag-1758550374815`
 - SELECT > Add Vector Search...
 - Embedding Model: `text-embedding-ada-002`
