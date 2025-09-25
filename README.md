@@ -517,12 +517,14 @@ print(response.choices[0].message.content)
 
 4. You need to install the Azure AI Inference library. Type the following command in the Cloud Shell:
 
-```pip install azure-ai-inference --user
+```
+pip install azure-ai-inference --user
 ```
 
 5. Now you can run the application. Type the following command in the Cloud Shell:
 
-```python gptapp.py
+```
+python gptapp.py
 ```
 ![cloud shell run](images/program.png)
 
