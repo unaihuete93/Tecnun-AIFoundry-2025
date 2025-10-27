@@ -25,7 +25,7 @@ There will be sections in the document were the student will have to upload a fi
 
 In this task you will see the Azure AI Foundry that has been set up for you. You will also see the models that have been deployed to this Foundry.
 
-If you open the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Sept`, you will see a resource called `foundryproject-tecnun-resource`. This is the Azure Foundry resource that has been set up for you.
+If you open the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Master`, you will see a resource called `foundryproject-tecnun-resource`. This is the Azure Foundry resource that has been set up for you.
 
 Open the resource and expand all the options on the left column. You will see the following options:
 
@@ -77,8 +77,8 @@ Search for `gpt-4.1` in the search bar:
 
 Focus on the 3 model options given for GPT-4.1:
 - GPT-4.1 (Azure OpenAI)
-- GPT-4.1-mini (Microsoft)
-- GPT-4.1-nano (Microsoft)
+- GPT-4.1-mini (Azure OpenAI)
+- GPT-4.1-nano (Azure OpenAI)
 
 This shows the different model variations that are available for GPT-4.1. Remember the main differences discussed in class between LLM and SLM models. The GPT-4.1 (Azure OpenAI) is a Large Language Model (LLM) while the GPT-4.1-mini and GPT-4.1-nano are Small Language Models (SLM).
 
@@ -152,7 +152,7 @@ Try the following example, ask the model "Who is the president of the USA?" and 
 
 ![Playground Example 1](images/Training-Data-Question.png)
 
-You can see the model answers gives "Joe Biden" as the answer. We can clearly see that the model can answer this question based on its training data.
+You can see the model answers gives "Joe Biden" as the answer. We can clearly see that the model can answer this question based on its training data, which is back from June 2024. This is one of the reasons why solutions like Microsoft Copilot or ChatGPT look for information not only in the model, they use web based searches for updated information. 
 
 #### TASK 4 - EXERCISE 1
 Try you own example question that reflects how the training data of the model may not be up to date. Upload the results as `TASK4-EXERCISE1-<YOUR NAME>.png`. **The picture must show the USERNAME/EMAIL to be taken as VALID**.
@@ -317,7 +317,7 @@ Each document in the index will represent a section of the PDF. The fields in th
 - Content
 - And many more fields that could be created for filtering/ordering purposes.
 
-Go to the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Sept`, you will see a resource called `searchtecnununav`. This is the Azure Search resource that has been set up for you.
+Go to the Azure Portal (https://portal.azure.com) and navigate to the resource group `AzureFoundry-Grado-Master`, you will see a resource called `searchtecnununav`. This is the Azure Search resource that has been set up for you.
 
 ![search resource](./images/search-resource.png)
 
@@ -409,7 +409,7 @@ Unchecking the option "Limit responses to your data content" will allow the mode
 #### TASK 5 - EXERCISE 1
 Try you own example question that reflects how RAG is used to provide relevant answers based on custom data. 
 
-Take a look at the provided PDF brocures that have been indexed in Azure Search for ideas. You can see the PDFs going to the Azure Portal, navigating to the resource group `AzureFoundry-Grado-Sept`, opening the storage account `stgradosept`, opening `Containers` on the left column and `destination` container.  Right click for downloading the files from the `rag-pdfs` container.
+Take a look at the provided PDF brocures that have been indexed in Azure Search for ideas. You can see the PDFs going to the Azure Portal, navigating to the resource group `AzureFoundry-Grado-Master`, opening the storage account `stgradoMaster`, opening `Containers` on the left column and `destination` container.  Right click for downloading the files from the `rag-pdfs` container.
 
 ![storage](images/storage.png)
 
