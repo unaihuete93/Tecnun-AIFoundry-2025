@@ -368,7 +368,7 @@ Click on **Add your data source**. This is where you can configure the RAG compo
 - Select Data Source: `Azure AI Search`
 - Subscription: `Suscripción de Azure 1`
 - Search Service: `searchtecnununav`
-- Index: `rag-1758550374815`
+- Index: `travel-brochures`
 - SELECT > Add Vector Search...
 - Embedding Model: `text-embedding-ada-002`
 
@@ -409,11 +409,11 @@ Unchecking the option "Limit responses to your data content" will allow the mode
 #### TASK 5 - EXERCISE 1
 Try you own example question that reflects how RAG is used to provide relevant answers based on custom data. 
 
-Take a look at the provided PDF brocures that have been indexed in Azure Search for ideas. You can see the PDFs going to the Azure Portal, navigating to the resource group `AzureFoundry-Grado-Master`, opening the storage account `stgradoMaster`, opening `Containers` on the left column and `destination` container.  Right click for downloading the files from the `rag-pdfs` container.
+Take a look at the provided PDF brocures that have been indexed in Azure Search for ideas. You can see the PDFs going to the Azure Portal, navigating to the resource group `AzureFoundry-Grado-Master`, opening the storage account `strtecnunmaster` on the left column and `travel-brochures`, right click for downloading the files from the container. You will test a question referencing the data on the given PDFs. 
 
 ![storage](images/storage.png)
 
-Show a Playground query that gives an answer citating the custom data. Similar to:
+Show a Playground query that gives an answer citating the downloaded custom documents. Similar to:
 
 ![rag-example-2](images/rag-query.png)
 
