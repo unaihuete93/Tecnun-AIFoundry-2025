@@ -325,7 +325,7 @@ Traditionally, searching engines have relied on **keyword-based search**, which 
 
 **Vector Search** is a more advanced technique that uses machine learning to understand the context and meaning of the text. It **converts the text into vector** representations (embeddings) that can be used for similarity search (cosine similarity, similarity between vectors). This allows the search engine to return documents that are **similar in meaning, even if they do not contain the exact keywords**.
 
-For the exercise we have taken those RAW PDF travel agency brochures and created an index in the Azure Search resource. The 4 original brochures have been stored in a storage account , processed and indexed. The index is called `rag-1758550374815`. You can see the index by clicking on the **Indexes** option in the left column in the Azure Portal of the Azure Search resource.
+For the exercise we have taken those RAW PDF travel agency brochures and created an index in the Azure Search resource. The 4 original brochures have been stored in a storage account , processed and indexed. The index is called `travel-brochures`. You can see the index by clicking on the **Indexes** option in the left column in the Azure Portal of the Azure Search resource.
 
 Open the index, you will see the **fields** that have been created for the index. The most important fields are:
 - **chunk**: This field contains the text content of the section. 
